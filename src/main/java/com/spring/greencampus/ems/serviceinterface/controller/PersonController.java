@@ -14,12 +14,12 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class PersonController {
-	private Logger logger = LoggerFactory.getLogger(PersonController.class);
+//	private Logger logger = LoggerFactory.getLogger(PersonController.class);
 	@RequestMapping("/persons")
 //	@Cacheable("showPeople")
 	public ResponseEntity<?> showPeople(){
 		RestTemplate restTemplate = new RestTemplate();
-		logger.info("ShowPeople Called Once!!!!!");
+//		logger.info("ShowPeople Called Once!!!!!");
 		return restTemplate.getForEntity("http://localhost:9191/persons", Object.class);
 	}
 
@@ -27,7 +27,7 @@ public class PersonController {
 	@RequestMapping("/personsdummy")
 	public Object showPeopleDummy(){
 		RestTemplate restTemplate = new RestTemplate();
-		logger.info("ShowPeople Called Once!!!!!");
+//		logger.info("ShowPeople Called Once!!!!!");
 		return restTemplate.getForEntity("http://localhost:9191/sensordata", Object.class).getBody();
 	}
 	
